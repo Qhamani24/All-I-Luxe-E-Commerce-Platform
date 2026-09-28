@@ -1,0 +1,314 @@
+/* Registration Page Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lora', serif; }
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links center, icons right */
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center links */
+.nav-links.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links.center a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links.center a:hover {
+  color: #bfa14a;
+}
+
+/* Right icons */
+.nav-icons.right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons.right a {
+  position: relative;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-icons.right a:hover {
+  color: #bfa14a;
+}
+
+/* Badge styling */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #bfa14a;   /* Gold accent */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #bfa14a;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { text-decoration: none; color: #555; font-weight: 600; transition: color 0.3s; }
+.navbar a:hover { color: #bfa14a; }
+
+
+/* Hero Text */
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #fdfaf6;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* full viewport height */
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1; /* takes half the width */
+  background: url('images/Image (1).jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.left-panel .overlay {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  bottom: 40px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4); /* subtle shadow for readability */
+  display: flex;
+}
+
+.left-panel .overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.left-panel p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  max-width: 300px;
+  margin: 0;
+}
+
+/* Form Elements */
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+
+/* Right Panel */
+.right-panel {
+  flex: 1; /* takes the other half */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #fdfaf6, #e2d1c3);
+}
+
+/* Form Box */
+.form-box {
+  width: 100%;       /* fill the right panel */
+  height: 100%;      /* match the left panel height */
+  max-width: none;   /* remove the 400px limit */
+  border-radius: 0;  /* optional: remove rounded corners so it matches the image panel */
+  box-shadow: none;  /* optional: keep it flat if you want symmetry */
+  padding: 40px;     /* keep inner spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-box h2 {
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.gold {
+  background: #bfa14a;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.btn.gold:hover {
+  background: #a88c3d;
+}
+
+.btn.google {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #bfa14a;
+  text-decoration: none;
+}
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: #fdfaf6;
+  padding: 50px 20px;
+  border-top: 1px solid #e2d1c3;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #bfa14a;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a:hover {
+  color: #bfa14a;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #333; /* or gold if you want luxury styling */
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #d4af37; /* elegant gold hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #e2d1c3;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #555;
+  font-size: 0.9rem;
+}
+

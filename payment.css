@@ -1,0 +1,282 @@
+/* Styles for the sell to us payment page */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links center, icons right */
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center links */
+.nav-links.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links.center a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links.center a:hover {
+  color: #bfa14a;
+}
+
+/* Right icons */
+.nav-icons.right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons.right a {
+  position: relative;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-icons.right a:hover {
+  color: #bfa14a;
+}
+
+/* Badge styling */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #bfa14a;   /* Gold accent */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #bfa14a;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { text-decoration: none; color: #555; font-weight: 600; transition: color 0.3s; }
+.navbar a:hover { color: #bfa14a; }
+
+/* Hero Base */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Text Animations */
+.hero-text {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Body and General Styles */
+body {
+  font-family: 'Lora', serif;
+  background: linear-gradient(to right, #f8f5f0, #eae6df);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  border-bottom: 2px solid #bfa14a;
+}
+
+.logo a {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #bfa14a;
+}
+
+.payment-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  font-family: 'Lora', serif;
+  color: #333;
+  background: #fdfaf6; /* ivory background */
+  padding: 20px;
+}
+
+.payment-wrapper h1 {
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.payment-wrapper p {
+  margin-bottom: 30px;
+  color: #555;
+  text-align: center;
+}
+
+/* Card Layout */
+.payment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Left: Payment Form */
+.payment-form {
+  flex: 2;
+}
+.payment-form h2, .payment-form h3 {
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 15px;
+}
+
+/* Right: Offer Summary */
+.order-summary {
+  flex: 1;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+.order-summary h2 {
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 20px;
+}
+.order-summary .item, .order-summary .total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.order-summary .total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #bfa14a;
+}
+
+/* Inputs */
+.input-box {
+  margin-bottom: 16px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+.form-row .input-box {
+  flex: 1;
+}
+
+/* Card Logo */
+.card-number-box {
+  position: relative;
+}
+.card-logo {
+  position: absolute;
+  right: 10px;
+  top: 38px;
+  height: 24px;
+  width: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Button */
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  background: #bfa14a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pay-btn:hover {
+  background: #a88c3a;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Trust cues */
+.secure-note {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+.secure-note i {
+  color: #bfa14a;
+  margin-right: 6px;
+}
+.cards-accepted {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.cards-accepted img {
+  height: 30px;
+}
+.cards-accepted img.visa { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\visa.png') no-repeat center; }
+.cards-accepted img.mastercard { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\mastercard.png') no-repeat center; }
+.cards-accepted img.amex { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\amex.png') no-repeat center; }
+.cards-accepted img.discover { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\discover.png') no-repeat center; }
+
+/* Expiry input */
+#expiry {
+  letter-spacing: 2px; /* makes MM/YY easier to read */
+}

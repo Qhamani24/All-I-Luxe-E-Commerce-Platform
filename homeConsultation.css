@@ -1,0 +1,43 @@
+.consultation-form {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.consultation-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation-form label {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.consultation-form input,
+.consultation-form textarea {
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Lora', serif;
+}
+
+.consultation-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.consultation-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #bfa14a;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}

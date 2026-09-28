@@ -1,0 +1,28 @@
+.store-locations {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.map-container {
+  margin: 2rem 0;
+  border: 2px solid gold;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.location-list {
+  list-style: none;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.location-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+}
+.location-list li:last-child {
+  border-bottom: none;
+}

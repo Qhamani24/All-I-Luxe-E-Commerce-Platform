@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All I Luxe | Bedroom Suite</title>
+  <link rel="stylesheet" href="shopBedroom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> > 
+    <a href="bedroomCategory.html">Bedroom Suites</a> > 
+    Vivian Bedroom Suite
+  </nav>
+
+  <!-- Product Section -->
+  <section class="product-detail">
+    <!-- Product Gallery -->
+<div class="product-gallery">
+  <img id="main-image" src="images/vivian-main.jpg" alt="Vivian Bedroom Suite">
+  <div class="thumbnails">
+    <img src="images/bedroomSuite1.jpg" alt="Side View">
+    <img src="images/bedroomSuite1.2.jpg" alt="Chest of Drawers">
+    <img src="images/bedroomSuite1.3.jpg" alt="Bed Close-up">
+  </div>
+</div>
+
+<script>
+    // Select the main image and all thumbnails
+  const mainImage = document.getElementById("main-image");
+  const thumbnails = document.querySelectorAll(".thumbnails img");
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener("click", () => {
+      // Fade out
+      mainImage.classList.add("fade-out");
+
+      setTimeout(() => {
+        // Swap image
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+
+        // Highlight active thumbnail
+        thumbnails.forEach(t => t.classList.remove("active-thumb"));
+        thumbnail.classList.add("active-thumb");
+
+        // Fade back in
+        mainImage.classList.remove("fade-out");
+        mainImage.classList.add("fade-in");
+      }, 300); // matches CSS transition duration
+    });
+  });
+</script>
+
+
+    <div class="product-info">
+      <h1>Vivian Bedroom Suite</h1>
+      <p class="price">R 89,999.00</p>
+      <button class="btn">Add to Cart</button>
+      <p class="description">
+        Experience timeless elegance with the Vivian Bedroom Suite, crafted for luxury and comfort.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>★★★★★ "Elegant. I'm 100% happy with my set." - Phindi</p>
+    <p>★★★★★ "Best piece of furniture in our house." - Zandile</p>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related">
+    <h2>Related Bedroom Suites</h2>
+    <div class="related-grid">
+      <div class="card">Ashley Bedroom Suite</div>
+      <div class="card">Edward Bedroom Suite</div>
+      <div class="card">Serena Bedroom Suite</div>
+    </div>
+  </section>
+
+</body>
+</html>

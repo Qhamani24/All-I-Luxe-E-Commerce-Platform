@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Payment</title>
+  <link rel="stylesheet" href="payment.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+     <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="wishlist.html">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+    <a href="#"><i class="fas fa-user"></i></a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+<section class="payment-wrapper">
+  <h1>Secure Seller Payment</h1>
+  <p>Complete your payment offer safely and securely.</p>
+
+  <div class="payment-card">
+    <!-- Left: Payment Form -->
+    <div class="payment-form">
+      <h2>Payment Method</h2>
+      <label><input type="radio" name="paymentMethod" value="card" checked> Credit/Debit Card</label>
+      <label><input type="radio" name="paymentMethod" value="bank"> Instant EFT</label>
+      <label><input type="radio" name="paymentMethod" value="paypal"> PayPal</label>
+
+      <h3>Card Details</h3>
+      <div class="input-box">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" id="cardName" placeholder="Qhamani Mona">
+      </div>
+
+      <div class="input-box card-number-box">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" maxlength="16" required>
+        <div id="cardLogo" class="card-logo"></div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-box">
+  <label for="expiry">Expiry</label>
+  <input type="text" id="expiry" maxlength="5" placeholder="MM/YY">
+</div>
+
+<script>
+  // Expiry auto-format (MMYY → MM/YY)
+  const expiryInput = document.getElementById('expiry');
+
+  expiryInput.addEventListener('input', function() {
+    // Only digits allowed
+    let value = this.value.replace(/\D/g, '');
+
+    // Limit to 5 digits including the /
+    if (value.length > 4) {
+      value = value.substring(0, 5);
+    }
+
+    // Format as MM/YY once 3+ digits entered
+    if (value.length >= 3) {
+      value = value.substring(0,2) + '/' + value.substring(2);
+    }
+
+    this.value = value;
+  });
+</script>
+
+
+        <div class="input-box">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" maxlength="3" placeholder="123">
+        </div>
+      </div>
+
+      <div class="secure-note">
+        <i class="fas fa-lock"></i> Secure SSL & 3D-Secure Transaction
+      </div>
+
+      <!--Confirm & Pay Button-->
+      <button class="pay-btn" onclick="window.location.href='thankYou.html'">
+      Confirm & Pay
+    </button>
+    </div>
+
+    <!-- EFT Section -->
+<div class="method-section" id="eftSection" style="display:none;">
+  <h3>Instant EFT</h3>
+  <p>You'll be redirected to your bank's secure portal to complete payment.</p>
+</div>
+
+<!-- PayPal Section -->
+<div class="method-section" id="paypalSection" style="display:none;">
+  <h3>PayPal</h3>
+  <p>You'll be redirected to PayPal to complete payment.</p>
+</div>
+
+<script>
+  // Toggle payment sections
+  document.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
+    radio.addEventListener('change', function() {
+      document.querySelectorAll('.method-section').forEach(sec => sec.style.display = 'none');
+      if (this.value === 'card') document.getElementById('cardSection').style.display = 'block';
+      if (this.value === 'bank') document.getElementById('eftSection').style.display = 'block';
+      if (this.value === 'paypal') document.getElementById('paypalSection').style.display = 'block';
+    });
+  });
+</script>
+    <!-- Right: Offer Summary -->
+    <div class="order-summary">
+      <h2>Payment Offer</h2>
+      <div class="item">
+        <span>Furniture Offer</span>
+        <span id="finalOffer">R2,000</span>
+      </div>
+      <div class="total">
+        <span>Total Due</span>
+        <span>R2,000</span>
+      </div>
+      <div class="cards-accepted">
+        <img src="C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\visa.png" alt="Visa">
+        <img src="C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\mastercard.png" alt="Mastercard">
+        <img src="C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\amex.png" alt="Amex">
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

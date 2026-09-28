@@ -1,0 +1,212 @@
+/* Styles for the signup page */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links center, icons right */
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center links */
+.nav-links.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links.center a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links.center a:hover {
+  color: #bfa14a;
+}
+
+/* Right icons */
+.nav-icons.right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons.right a {
+  position: relative;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-icons.right a:hover {
+  color: #bfa14a;
+}
+
+/* Badge styling */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #bfa14a;   /* Gold accent */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #bfa14a;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { text-decoration: none; color: #555; font-weight: 600; transition: color 0.3s; }
+.navbar a:hover { color: #bfa14a; }
+
+/* Hero Base */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Text Animations */
+.hero-text {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: linear-gradient(to right, #f8f5f0, #eae6df);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  border-bottom: 2px solid #bfa14a;
+}
+
+.logo a {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #bfa14a;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.form-container h1 {
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px; /* extra spacing between fields */
+  display: flex;
+  align-items: center;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 12px 12px 40px; /* leave space on the LEFT for icon */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* prevents overflow */
+}
+
+.input-box .icon {
+  position: absolute;
+  left: 12px; /* move icon to the left inside the field */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bfa14a;
+  font-size: 18px;
+  pointer-events: none; /* ensures clicks go to input */
+}
+
+/* Phone number field with country code */
+.phone-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.country-code {
+  background: #f8f5f0; /* subtle ivory background */
+  color: #333;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-right: 1px solid #ccc;
+  white-space: nowrap; /* prevents wrapping */
+}
+
+.phone-input input {
+  flex: 1; /* take remaining space */
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.btn {
+  background-color: #bfa14a;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #8c7a3a;
+}

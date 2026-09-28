@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Evaluation</title>
+  <link rel="stylesheet" href="evaluation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+    <a href="#"><i class="fas fa-user"></i></a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+
+  <!-- Evaluation Section -->
+  <section class="evaluation-container">
+    <h1>Your Submission is Being Reviewed</h1>
+    <p>Our expert team is currently evaluating your furniture based on craftsmanship, brand, and market demand. You will receive a competitive offer shortly.</p>
+
+    <!-- Placeholder Offer -->
+    <div class="offer-box">
+      <h2>Estimated Offer</h2>
+      <p id="offerValue">Calculating...</p>
+    </div>
+
+    <!-- Accept Button -->
+    <button class="btn" onclick="window.location.href='payment.html'">
+      Accept Offer & Proceed to Payment
+    </button>
+
+    <!-- Reject Button -->
+    <button class="btn reject-btn" onclick="window.history.back()">
+      Reject Offer & Go Back
+    </button>
+
+    <!-- Note: In a real website, the offer value would be dynamically calculated based on the submitted data and market conditions. The JavaScript below simulates this process for demonstration purposes. -->
+    <script>
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const brand = getQueryParam("brand");
+  const condition = getQueryParam("condition");
+
+  // Base price by brand
+  let basePrice = 10000;
+  if (brand === "Coricraft") basePrice = 12000;
+  if (brand === "Waylandts") basePrice = 15000;
+  if (brand === "Winston Sahd") basePrice = 18000;
+
+  // Adjust by condition
+  if (condition === "excellent") basePrice *= 1.2;   // +20%
+  if (condition === "good") basePrice *= 1.0;       // no change
+  if (condition === "fair") basePrice *= 0.8;       // -20%
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("offerValue").textContent = "R " + Math.round(basePrice).toLocaleString();
+  });
+</script>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* Cart Page Styling */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #fffdf7, #f9f6f0);
+  color: #333;
+}
+
+.navbar {
+  background: #fdfdfd;
+  border-bottom: 2px solid #d4af37;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+  color: #444;
+  margin: 0;
+}
+
+#cart-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #e8e6df;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 100px;
+  border-radius: 6px;
+}
+
+.cart-item h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cart-item p {
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.remove-btn {
+  background: none;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #d4af37;
+  color: #fff;
+}
+
+.cart-footer {
+  text-align: center;
+  padding: 2rem;
+}
+
+#checkout-btn {
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#checkout-btn:hover {
+  background: #b9972e;
+}

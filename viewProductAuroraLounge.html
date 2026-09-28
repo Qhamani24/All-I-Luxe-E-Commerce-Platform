@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All I Luxe | Lounge Suite</title>
+  <link rel="stylesheet" href="shopLounge.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="shopLounge.html">Lounge Suites</a> > 
+    Aurora Lounge Suite
+  </nav>
+
+<section class="product-detail">
+
+  <!-- Product Gallery (Left) -->
+  <div class="product-gallery">
+    <div class="image-wrapper">
+      <button class="arrow left"><i class="fa fa-chevron-left"></i></button>
+      <img id="main-image" src="images/loungeSuite1.jpg" alt="Aurora Lounge Suite">
+    </div>
+
+    <div class="thumbnails">
+      <img src="images/loungeSuite1.jpg" alt="Front View" class="active-thumb">
+      <img src="images/loungeSuite1.2.jpg" alt="Side View">
+      <img src="images/loungeSuite1.3.jpg" alt="Alternate Angle">
+    </div>
+  </div>
+
+  <!-- Product Info (Right) -->
+  <div class="product-info">
+    <span class="promo">PROMO 20% OFF</span>
+    <h1>Aurora Lounge Suite</h1>
+    <p class="price">
+      R 32,999.00 <span class="old-price">R 41,249.00</span> 
+      <span class="save">SAVE R 8,250</span>
+    </p>
+    <p class="installments">Or 6 payments of R 5,499.83 p/m at 0% interest*</p>
+    <p class="sku">SKU: 0456789</p>
+
+    <div class="options">
+      <label for="material">Select Material:</label>
+      <select id="material">
+        <option>Fabric</option>
+        <option>Leather</option>
+      </select>
+
+      <label for="colour">Colour:</label>
+      <select id="colour">
+        <option>Aurora Grey</option>
+        <option>Ivory White</option>
+        <option>Midnight Black</option>
+      </select>
+    </div>
+
+    <button class="btn"><a href="addToCart.html">Add to Cart</a></button>
+    <p class="description">
+      Experience timeless elegance with the Aurora Lounge Suite, crafted for luxury and comfort.
+    </p>
+  </div>
+</section>
+
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>★★★★★ "Elegant. I'm 100% happy with my set." - Phindi</p>
+    <p>★★★★★ "Best piece of furniture in our house." - Zandile</p>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related">
+    <h2>Related Lounge Suites</h2>
+    <div class="related-grid">
+      <div class="card">Valentina Corner Suite</div>
+      <div class="card">Monarch Recliner Set</div>
+      <div class="card">Banks 1 Seater Couch</div>
+    </div>
+  </section>
+
+  <!-- Thumbnail Swap Script -->
+  <script>
+    
+   const mainImage = document.getElementById("main-image");
+   const thumbnails = document.querySelectorAll(".thumbnails img");
+   const leftArrow = document.querySelector(".arrow.left");
+   const rightArrow = document.querySelector(".arrow.right");
+
+  let currentIndex = 0;
+
+function showImage(index) {
+  thumbnails.forEach(t => t.classList.remove("active-thumb"));
+  thumbnails[index].classList.add("active-thumb");
+  mainImage.src = thumbnails[index].src;
+  mainImage.alt = thumbnails[index].alt;
+  currentIndex = index;
+}
+
+// Thumbnail click
+thumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener("click", () => showImage(index));
+});
+
+// Arrow navigation
+leftArrow.addEventListener("click", () => {
+  let newIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+  showImage(newIndex);
+});
+
+rightArrow.addEventListener("click", () => {
+  let newIndex = (currentIndex + 1) % thumbnails.length;
+  showImage(newIndex);
+});
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Home</title>
+  <link rel="stylesheet" href="homePage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap"> <!-- Font awesome provided the fonts used in the about us page-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome for icons -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script> <!-- Google Identity Services for authentication -->
+</head>
+
+<body>
+
+  <!-- Navigation Panel-->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="wishlist.html">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+  <a href="assignmentRegistration.html">
+    <i class="fas fa-user"></i>
+  </a>
+</li>
+</ul>
+</nav>
+  </header>
+
+ <!-- Bedroom Hero visually dominant banner at the top of the homepage -->
+<section class="hero bedroom">
+  <div class="hero-text">
+    <h1>Elevating Everyday Living</h1>
+    <p>Discover timeless luxury furniture curated for elegance, comfort, and sophistication.</p>
+    <button class="btn" onclick="window.location.href='shopBedroom.html'">Shop Bedroom</button>
+  </div>
+</section>
+
+<!-- Dining Room Hero -->
+<section class="hero dining">
+  <div class="hero-text">
+    <h1>Refined Dining Experiences</h1>
+    <p>Transform every meal into a moment of luxury with our dining collections.</p>
+    <button class="btn" onclick="window.location.href='shopDining.html'">Shop Dining</button>
+  </div>
+</section>
+
+<!-- Lounge Suite Hero -->
+<section class="hero lounge">
+  <div class="hero-text">
+    <h1>Luxury Lounge Living</h1>
+    <p>Relax in style with our opulent lounge suites designed for comfort and elegance.</p>
+    <button class="btn" onclick="window.location.href='shopLounge.html'">Shop Lounge</button>
+  </div>
+</section>
+
+
+  <!-- Featured Categories -->
+  <section class="categories">
+    <h2>Explore Our Collections</h2>
+    <div class="category-grid">
+      <div class="category-card">
+        <i class="fas fa-couch"></i>
+        <h3>Seating</h3>
+        <p>Opulent sofas, armchairs, and lounges designed for comfort and style.</p>
+      </div>
+      <div class="category-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Dining</h3>
+        <p>Refined dining tables and chairs that transform every meal into an experience.</p>
+      </div>
+      <div class="category-card">
+        <i class="fas fa-bed"></i>
+        <h3>Bedding</h3>
+        <p>Premium beds and linens for restful nights in luxury.</p>
+      </div>
+      <div class="category-card">
+        <i class="fas fa-gem"></i>
+        <h3>Décor</h3>
+        <p>Bespoke décor pieces that add sophistication to your interiors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspiration Section -->
+  <section class="inspiration">
+    <h2>Our Inspiration</h2>
+    <p>Luxury is not just about possessions — it's about creating moments and spaces that inspire confidence, joy, and timeless sophistication.</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Ready to Transform Your Space?</h2>
+    <a href="browseFurniture.html" class="btn">Browse Furniture</a>
+    <a href="sellToUsPage.html" class="btn">Sell To Us</a>
+  </section>
+
+ <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About All I Luxe</h3>
+      <p>Curating premium lifestyle and luxury furniture to elevate everyday living. 
+         Explore timeless designs crafted with elegance and sophistication.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell to Us</a></li>
+        <li><a href="browseFurniture.html">Categories</a></li>
+        <li><a href="contactUs.html">Contact</a></li>
+        <li><a href="assignmentRegistration.html" id="footer-account">My Account</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Care -->
+    <div class="footer-section">
+      <h3>Customer Care</h3>
+      <ul>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="shipping.html">Shipping & Delivery</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Social -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@alliluxe.com">support@alliluxe.com</a></p>
+      <p>Phone: <a href="tel:+27000000000">+27 00 000 0000</a></p>
+      <div class="social-icons">
+        <!-- Facebook -->
+<a href="https://www.facebook.com/YourPageName" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/YourProfileName" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<!-- Twitter -->
+<a href="https://twitter.com/YourHandle" target="_blank">
+  <i class="fab fa-twitter"></i>
+</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 All I Luxe. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

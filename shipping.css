@@ -1,0 +1,216 @@
+/* Styles for Shipping & Delivery Page */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lora', serif; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links center, icons right */
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center links */
+.nav-links.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links.center a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links.center a:hover {
+  color: #bfa14a;
+}
+
+/* Right icons */
+.nav-icons.right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons.right a {
+  position: relative;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-icons.right a:hover {
+  color: #bfa14a;
+}
+
+/* Badge styling */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #bfa14a;   /* Gold accent */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #bfa14a;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { text-decoration: none; color: #555; font-weight: 600; transition: color 0.3s; }
+.navbar a:hover { color: #bfa14a; }
+
+/* Hero Base */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Text Animations */
+.hero-text {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Shipping Page Styling */
+.shipping-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.shipping-container h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #bfa14a; /* gold accent */
+}
+
+.shipping-section {
+  margin-bottom: 30px;
+}
+
+.shipping-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #bfa14a;
+  margin-bottom: 10px;
+}
+
+.shipping-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  background: #fdfaf6;
+  padding: 12px 18px;
+  border-left: 3px solid #bfa14a;
+  border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+  background: #fdfaf6;
+  padding: 50px 20px;
+  border-top: 1px solid #e2d1c3;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #bfa14a;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a:hover {
+  color: #bfa14a;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #bfa14a;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #e2d1c3;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #555;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Favourites | All I Luxe</title>
+  <link rel="stylesheet" href="wishlist.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <h1>My Favourites</h1>
+  </header>
+
+  <section id="wishlist-container">
+    <p>No favourites yet. Start adding from the shop!</p>
+  </section>
+</body>
+</html>
+<script>
+  const favButtons = document.querySelectorAll('.fav-btn');
+  const wishlistBadge = document.querySelector('.fa-heart + .badge');
+
+  let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+  // Update badge on load
+  wishlistBadge.textContent = favourites.length;
+
+  favButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const productCard = btn.closest('.product-card');
+      const product = {
+        name: productCard.querySelector('h2').textContent,
+        price: productCard.querySelector('.price').textContent,
+        image: productCard.querySelector('img').src
+      };
+
+      if (btn.classList.toggle('active')) {
+        favourites.push(product);
+      } else {
+        favourites = favourites.filter(item => item.name !== product.name);
+      }
+
+      localStorage.setItem('favourites', JSON.stringify(favourites));
+      wishlistBadge.textContent = favourites.length;
+    });
+  });
+  
+// Populate wishlist on page load
+  const container = document.getElementById('wishlist-container');
+  const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+  if (favourites.length === 0) {
+    container.innerHTML = "<p>No favourites yet. Start adding from the shop!</p>";
+  } else {
+    container.innerHTML = favourites.map(item => `
+      <div class="wishlist-item">
+        <img src="${item.image}" alt="${item.name}">
+        <h2>${item.name}</h2>
+        <p>${item.price}</p>
+      </div>
+    `).join('');
+  }
+</script>
+

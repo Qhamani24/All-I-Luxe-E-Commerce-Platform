@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Consultation | All I Luxe</title>
+  <link rel="stylesheet" href="sellToUsPage.css">
+  <link rel="stylesheet" href="homeConsultation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="homePage.html">Home</a></li>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="consultation-form">
+    <h1>Request a Home Consultation</h1>
+    <p>Submitting over 25 items? Arrange a home consultation with one of our professionals for a seamless experience.</p>   
+  <form action="consultationSuccess.html" method="get">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="mobile">Mobile Number</label>
+  <div class="phone-input">
+    <span class="country-code">+27 (ZA)</span>
+    <input type="tel" id="mobile" name="mobile" placeholder="0821234567" 
+           pattern="[0-9]{10}" maxlength="10" required>
+  </div>
+
+  <label for="items">Number of Items</label>
+  <input type="number" id="items" name="items" min="25" required>
+
+  <label for="address">Address</label>
+  <textarea id="address" name="address" required></textarea>
+
+  <!-- Submit request button -->
+  <button type="submit" class="btn">Submit Request</button>
+</form>
+  </section>
+
+</body>
+</html>

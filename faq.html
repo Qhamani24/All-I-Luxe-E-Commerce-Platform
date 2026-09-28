@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | All I Luxe</title>
+  <link rel="stylesheet" href="faq.css"> <!-- link to your CSS -->
+</head>
+<body>
+  <!-- Navbar (reuse your existing one for consistency) -->
+  <header>
+    <nav>
+      <!-- Copy your homepage nav here -->
+    </nav>
+  </header>
+
+  <!-- FAQ Section -->
+  <main class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+    
+    <div class="faq-item">
+      <button class="faq-question">What products does All I Luxe specialize in?</button>
+      <div class="faq-answer">
+        <p>We curate premium furniture pieces with a focus on luxury design, elegant finishes, and timeless style.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How does shipping & delivery work?</button>
+      <div class="faq-answer">
+        <p>We partner with trusted couriers to ensure safe delivery. Shipping times vary by location, but you’ll receive tracking details once your order is dispatched.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What is your returns policy?</button>
+      <div class="faq-answer">
+        <p>Returns are accepted within 14 days of delivery, provided items are unused and in original packaging.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is my personal information secure?</button>
+      <div class="faq-answer">
+        <p>Yes, we follow strict privacy protocols to protect your data. Please see our <a href="privacy.html">Privacy Policy</a> for details.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (reuse your existing footer) -->
+  <footer>
+    <!-- Copy your footer markup here -->
+  </footer>
+
+  <script>
+    // Simple accordion toggle
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

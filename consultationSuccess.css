@@ -1,0 +1,111 @@
+/* Header with Back Button */
+.consultation-success-header {
+  padding: 1rem 2rem;
+  background: #fff; /* ivory background for consistency */
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #bfa14a; /* elegant gold */
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #111;
+  transform: translateX(-2px);
+}
+
+/* Success Message Container */
+.success-message {
+  max-width: 700px;
+  margin: 6rem auto;
+  text-align: center;
+  background: #fdfaf6; /* soft ivory tone */
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid #e2d1c3;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.success-message h1 {
+  color: #111;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+.success-message p {
+  margin: 1rem 0;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-family: 'Lora', serif;
+}
+
+/* Call-to-Action Button */
+.success-message a {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(135deg, #bfa14a, #e6c76d);
+  color: #111;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.success-message a:hover {
+  background: #111;
+  color: #bfa14a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.return-btn {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 1rem 2.2rem;
+  background: #bfa14a; /* solid elegant gold */
+  color: #fff; /* white text for contrast */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.return-btn:hover {
+  background: #d4b65a; /* lighter gold on hover */
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.return-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}

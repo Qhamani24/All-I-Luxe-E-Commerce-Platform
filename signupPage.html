@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Signup</title>
+  <link rel="stylesheet" href="signupPage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="wishlist.html">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+    <a href="#"><i class="fas fa-user"></i></a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+
+  <!-- Registration Form -->
+  <section class="form-container">
+    <h1>Create Your Account</h1>
+    <form id="signupForm.php" action="index.html" method="post">
+      
+      <!-- First Name -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <input type="text" name="firstName" placeholder="Enter First Name" required>
+      </div>
+
+      <!-- Last Name -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <input type="text" name="lastName" placeholder="Enter Last Name" required>
+        <input type="hidden" name="userType" value="seller"> <!-- Hidden field to specify user type -->
+      </div>  
+
+      <!-- Email -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-envelope"></i></span>
+        <input type="email" name="email" placeholder="Enter Email" required>
+      </div>
+
+      <!-- Age -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-calendar"></i></span>
+        <input type="number" id="age" name="age" placeholder="Enter Age" min="18" required> <!-- Age validation to ensure user is at least 18 years old -->
+      </div>
+
+      <!-- Mobile Number -->
+      <div class="input-box">
+        <label for="mobile">Mobile Number</label>
+      <div class="phone-input">
+        <span class="country-code">+27 (ZA)</span>
+        <input type="tel" id="mobile" name="mobile" placeholder="0821234567" pattern="[0-9]{10}" maxlength="10" required> <!-- Pattern and maxlength to ensure valid South African mobile number format -->
+     </div>
+     </div>
+
+      <!-- Password -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-lock"></i></span>
+        <input type="password" name="password" placeholder="Enter Password" required>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-lock"></i></span>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+      </div>
+
+      <!-- Submit -->
+      <form id="signupForm" action="uploadFurniture.html" method="post">
+      <!-- input fields here -->
+       <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+
+      <p>Already have an account? <a href="assignmentRegistration.html">Login</a></p>
+    </form>
+  </section>
+
+</body>
+</html>

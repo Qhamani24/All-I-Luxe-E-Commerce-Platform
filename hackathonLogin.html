@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibes on Vossie</title>
+  <link rel="stylesheet" href="hackathonSignUpPage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Vibes on Vossie</a>
+    <nav>
+      <ul>
+        <li><a href="dailyCheckIn.html">Daily Check-In</a></li>
+        <li><a href="moodTracker.html">Mood Tracker</a></li>
+        <li><a href="wellnessResources.html">Wellness Resources</a></li>
+        <li><a href="hackathonLogin.html">Login</a></li>
+        <li><a href="hackathonSignUpPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+    <a href="#"><i class="fas fa-user"></i></a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+
+  <!-- Registration Form -->
+  <section class="form-container">
+    <h1>Create Your Account</h1>
+    <form id="signupForm.php" action="dailyCheckIn.html" method="post">
+      
+      <!-- Email -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-envelope"></i></span>
+        <input type="email" name="email" placeholder="Enter Student Email" required>
+      </div>
+
+      
+
+      <!-- Password -->
+      <div class="input-box">
+        <span class="icon"><i class="fas fa-lock"></i></span>
+        <input type="password" name="password" placeholder="Enter Password" required>
+      </div>
+
+      
+      <!-- Submit -->
+      <form id="signupForm" action="dailyCheckIn.html" method="post">
+      <!-- input fields here -->
+       <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+
+      <p>Already have an account? <a href="hackathonLogin.html">Login</a></p>
+    </form>
+  </section>
+
+</body>
+</html>

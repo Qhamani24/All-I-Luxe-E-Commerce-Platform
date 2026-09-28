@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Contact us</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap"> <!-- Font awesome provided the fonts used in the about us page-->
+  <link rel="stylesheet" href="styleContactUsForm.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome provided the social media icons -->
+</head>
+<body>
+   
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="assignmentRegistration.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+      <!-- <a href="#"><i class="fas fa-user"></i></a> --> <!-- Updated to link to login page -->
+     <a href="assignmentRegistration.html">
+    <i class="fas fa-user"></i>
+  </a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+  <div class="contact-container">
+    <!-- Left Section -->
+    <div class="contact-info">
+      <h2>Let's get in touch</h2>
+      ✨ At <strong>All I Luxe</strong>, we pride ourselves on curating premium lifestyle and luxury experiences. <br>
+    Whether you're seeking collaborations, tailored inquiries, or personalized service, our team is here to connect with you. <br>
+    Reach out to us through the contact form, and we'll be delighted to assist you in exploring the world of luxury together. <br>
+     We look forward to hearing from you and creating unforgettable experiences that embody the essence of luxury. ✨ <br>
+     <br>
+
+      <h3>Contact Information</h3> <br>
+      <div class="info">
+        <address>
+          <strong>Address:</strong> <br>
+          31 Griffin Road <br>
+          Cambridge West <br>
+          East London <br>
+          Eastern Cape <br>
+          South Africa <br>
+          5247 <br>
+        </address>
+      </div>
+      <div class="info">
+        <strong>Email:</strong> <br>
+        qhamanimona@gmail.com
+      </div>
+      <div class="info">
+        <strong>Phone:</strong> <br>
+        074 294 8336
+      </div>
+     <div class="social-icons">
+  <a href="https://www.facebook.com/YourPageName" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/YourHandle" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/YourProfileName" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/YourProfile" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+    </div>
+
+    <!-- Right Section -->
+    <div class="contact-form">
+      <h2>Contact us</h2>
+      <p>We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
+
+      <form id="contactForm">
+        <form action="index.php" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label for="username"><b>Username *</b></label> <br>
+          <input type="text" id="username" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email"><b>Email *</b></label> <br>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone"><b>Phone *</b></label> <br>
+          <input type="tel" id="phone" placeholder="Enter your phone number" 
+         pattern="\d{10}" maxlength="10" required> <!-- Ensures that users enter exactly 10 digits -->
+        </div>
+
+        <div class="form-group">
+          <label for="message"><b>Message *</b></label> <br>
+          <textarea id="message" placeholder="Write your message" required></textarea>
+        </div>
+        <button type="submit" class="send-btn" onclick="validateForm(event)">Send</button>
+
+<script>
+function validateForm(event) {
+  event.preventDefault(); // stop the form from submitting immediately
+
+  // Get values
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  // Basic validation
+  if (username === "" || email === "" || phone === "" || message === "") {
+    alert("Please fill in all required fields.");
+    return false;
+  }
+
+  // Email format check
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    alert("Please enter a valid email address.");
+    return false;
+  }
+
+  // Phone number check (10 digits)
+  const phonePattern = /^\d{10}$/;
+  if (!phone.match(phonePattern)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return false;
+  }
+
+  // If everything is valid
+  alert("Thank you, " + username + "! Your message has been sent successfully.");
+  return true;
+}
+</script>
+
+        
+      </form>
+    </div>
+  </div>
+
+   <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About All I Luxe</h3>
+      <p>Curating premium lifestyle and luxury furniture to elevate everyday living. 
+         Explore timeless designs crafted with elegance and sophistication.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        
+        <li><a href="homePage.html">Home</a></li>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell to Us</a></li>
+        <li><a href="browseFurniture.html">Categories</a></li>
+        <li><a href="contactUs.html">Contact</a></li>
+        <li><a href="#" id="footer-account">My Account</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Care -->
+    <div class="footer-section">
+      <h3>Customer Care</h3>
+      <ul>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="shipping.html">Shipping & Delivery</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Social -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@alliluxe.com">support@alliluxe.com</a></p>
+      <p>Phone: <a href="tel:+27000000000">+27 00 000 0000</a></p>
+      <div class="social-icons">
+       <a href="https://www.facebook.com/YourPageName" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/YourProfileName" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<!-- Twitter -->
+<a href="https://twitter.com/YourHandle" target="_blank">
+  <i class="fab fa-twitter"></i>
+</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 All I Luxe. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script src="jsContactUsForm.js"></script>
+</body>
+</html>

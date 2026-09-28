@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All I Luxe | Valentina Corner Suite</title>
+  <link rel="stylesheet" href="shopLounge.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="shopLounge.html">Lounge Suites</a> > 
+    Valentina Corner Suite
+  </nav>
+
+<section class="product-detail">
+
+  <!-- Product Gallery -->
+  <div class="product-gallery">
+    <div class="image-wrapper">
+      <button class="arrow left"><i class="fa fa-chevron-left"></i></button>
+      <img id="main-image" src="images/loungeSuite2.jpg" alt="Valentina Corner Suite">
+      <button class="arrow right"><i class="fa fa-chevron-right"></i></button>
+    </div>
+
+    <div class="thumbnails">
+      <img src="images/loungeSuite2.jpg" alt="Front View" class="active-thumb">
+      <img src="images/loungeSuite2.2.jpg" alt="Side View">
+      <img src="images/loungeSuite2.3.jpg" alt="Alternate Angle">
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <h1>Valentina Corner Suite</h1>
+    <p class="price">
+      R 26,499.00 <span class="old-price">R 31,175.00</span> 
+      <span class="save">SAVE R 4,676</span>
+    </p>
+    <p class="sku">SKU: 0456790</p>
+
+    <button class="btn-view">Add to Cart</button>
+    <p class="description">
+      The Valentina Corner Suite blends modern design with luxurious comfort, perfect for family living and stylish entertaining.
+    </p>
+  </div>
+</section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>★★★★★ "Beautiful and comfortable, fits perfectly in our lounge." – Nomsa</p>
+    <p>★★★★☆ "Great value for the price." – Sipho</p>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related">
+    <h2>Related Lounge Suites</h2>
+    <div class="related-grid">
+      <div class="card">Aurora Lounge Suite</div>
+      <div class="card">Monarch Recliner Set</div>
+      <div class="card">Banks 1 Seater Couch</div>
+    </div>
+  </section>
+
+  <!-- Thumbnail Swap Script -->
+  <script>
+   const mainImage = document.getElementById("main-image");
+   const thumbnails = document.querySelectorAll(".thumbnails img");
+   const leftArrow = document.querySelector(".arrow.left");
+   const rightArrow = document.querySelector(".arrow.right");
+
+   let currentIndex = 0;
+
+   function showImage(index) {
+     thumbnails.forEach(t => t.classList.remove("active-thumb"));
+     thumbnails[index].classList.add("active-thumb");
+     mainImage.src = thumbnails[index].src;
+     mainImage.alt = thumbnails[index].alt;
+     currentIndex = index;
+   }
+
+   thumbnails.forEach((thumbnail, index) => {
+     thumbnail.addEventListener("click", () => showImage(index));
+   });
+
+   leftArrow.addEventListener("click", () => {
+     let newIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+     showImage(newIndex);
+   });
+
+   rightArrow.addEventListener("click", () => {
+     let newIndex = (currentIndex + 1) % thumbnails.length;
+     showImage(newIndex);
+   });
+  </script>
+
+</body>
+</html>

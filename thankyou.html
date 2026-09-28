@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All I Luxe | Thank You</title>
+  <link rel="stylesheet" href="thankyou.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="aboutUsPage.html">About Us</a></li>
+        <li><a href="sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="assignmentRegistration.html">Login</a></li>
+        <li><a href="signupPage.html">Signup</a></li>
+      </ul>
+      </nav>
+
+       <!-- Right: Icons -->
+  <ul class="nav-icons right">
+  <li>
+    <a href="#"><i class="fas fa-search"></i></a>
+  </li>
+  <li>
+    <a href="wishlist.html">
+      <i class="fas fa-heart"></i>
+      <span class="badge">0</span> <!-- Badge for wishlist count -->
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">0</span> <!-- Badge for cart count -->
+    </a>
+  </li>
+  <li>
+    <a href="assignmentRegistration.html"><i class="fas fa-user"></i></a>
+  </li>
+</ul>
+</nav>
+  </header>
+
+  <!-- Confirmation Section -->
+  <section class="thankyou-container">
+    <h1 class="fade-in">🎉 Transaction Complete</h1>
+    <p class="fade-in-delay">Thank you for selling your luxury furniture with All I Luxe. Your payment has been processed successfully.</p>
+
+    <div class="summary-box fade-in-delay2">
+      <h2>Summary</h2>
+      <p>Offer Accepted: R 2,000 (example placeholder)</p>
+      <p>Payment Method: Credit/Debit Card</p>
+      <p>Status: Completed</p>
+    </div>
+
+    <button class="btn fade-in-delay3" onclick="window.location.href='index.html'">
+      Return to Homepage
+    </button>
+  </section>
+
+  <!-- Confetti Effect -->
+  <canvas id="confetti"></canvas>
+
+  <script>
+    // Simple confetti animation
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confettiPieces = Array.from({length: 100}).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random() * 6 + 4,
+      d: Math.random() * 100 + 50,
+      color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+      tilt: Math.random() * 10 - 10
+    }));
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettiPieces.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      });
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      confettiPieces.forEach(p => {
+        p.y += p.r / 2;
+        if (p.y > canvas.height) {
+          p.y = -10;
+          p.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    setInterval(drawConfetti, 30);
+  </script>
+
+   <!-- Download Receipt Button -->
+  <button class="btn fade-in-delay3" onclick="downloadPDF()">
+    Download Receipt (PDF)
+  </button>
+</section>
+
+<!-- jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Luxury branding styles
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(22);
+  doc.setTextColor(191, 161, 74); // gold accent
+  doc.text("All I Luxe", 105, 20, { align: "center" });
+
+  doc.setFontSize(16);
+  doc.setTextColor(51, 51, 51);
+  doc.text("Transaction Receipt", 105, 35, { align: "center" });
+
+  // Decorative line
+  doc.setDrawColor(191, 161, 74);
+  doc.line(40, 40, 170, 40);
+
+  // Transaction details
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+  doc.setTextColor(0, 0, 0);
+  doc.text("Offer Accepted: R 2,000", 20, 60);
+  doc.text("Payment Method: Credit/Debit Card", 20, 70);
+  doc.text("Status: Completed", 20, 80);
+  doc.text("Date: " + new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(), 20, 90);
+
+  // Footer
+  doc.setFontSize(10);
+  doc.setTextColor(120, 120, 120);
+  doc.text("Thank you for choosing All I Luxe.", 105, 280, { align: "center" });
+
+  // Save PDF
+  doc.save("AllILuxe_Receipt.pdf");
+}
+</script>
+
+</body>
+</html>

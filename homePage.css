@@ -1,0 +1,370 @@
+/* Styles for Home Page */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lora', serif; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links center, icons right */
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center links */
+.nav-links.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links.center a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links.center a:hover {
+  color: #bfa14a;
+}
+
+/* Right icons */
+.nav-icons.right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons.right a {
+  position: relative;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-icons.right a:hover {
+  color: #bfa14a;
+}
+
+/* Badge styling */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #bfa14a;   /* Gold accent */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #bfa14a;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { text-decoration: none; color: #555; font-weight: 600; transition: color 0.3s; }
+.navbar a:hover { color: #bfa14a; }
+
+/* Hero Base */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Text Animations */
+.hero-text {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fdfaf6;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #e2d1c3;
+  animation: fadeIn 2s ease forwards;
+}
+
+.hero-text .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #bfa14a; /* Elegant gold tone */
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  animation: fadeUp 2.5s ease forwards;
+}
+
+.hero-text .btn:hover {
+  background-color: #a88c3a; /* Slightly darker gold */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Soft shadow for depth */
+}
+
+/* Background Zoom Animation */
+.hero {
+  animation: zoomBg 15s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomBg {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
+
+/* Specific Backgrounds */
+.bedroom {
+  background-image: url("images/homepageBedroomDesign.jpg");
+}
+
+.dining {
+  background-image: url("images/homepageDiningRoomDesign.jpg");
+}
+
+.lounge {
+  background-image: url("images/homepageLoungeSuite.jpg");
+}
+
+
+
+/* Categories */
+.categories { padding: 60px 20px; text-align: center; }
+.categories h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #bfa14a; margin-bottom: 40px; }
+.category-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.category-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.category-card:hover { transform: translateY(-5px); }
+.category-card i { font-size: 2rem; color: #bfa14a; margin-bottom: 15px; }
+
+/* Inspiration */
+.inspiration {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.inspiration h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #bfa14a; margin-bottom: 20px; }
+.inspiration p { color: #555; line-height: 1.6; }
+
+/* CTA which is a call to action */
+.cta { text-align: center; padding: 60px 20px; }
+.cta h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #bfa14a; margin-bottom: 20px; }
+/* CTA Section */
+.cta {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fdfaf6; /* soft ivory background */
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* CTA Buttons */
+.cta .btn {
+  display: inline-block;
+  margin: 0 12px;
+  padding: 14px 32px;
+  background-color: #bfa14a; /* gold accent */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.cta .btn:hover {
+  background-color: #a88c3a; /* darker gold */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Right icons design */
+.nav-icons li a i.fas.fa-user {
+  color: #333; /* default */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icons li a:hover i.fas.fa-user {
+  color: #d4af37; /* luxury gold accent */
+  transform: scale(1.1); /* subtle zoom */
+}
+.nav-icons li a i.fas.fa-shopping-cart {
+  color: #333; /* default */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icons li a:hover i.fas.fa-shopping-cart {
+  color: #d4af37; /* luxury gold accent */
+  transform: scale(1.1); /* subtle zoom */
+}
+
+.nav-icons li a i.fas.fa-search {
+  color: #333; /* default */
+  transition: color 0.3s ease, transform 0.3s ease;
+} 
+.nav-icons li a:hover i.fas.fa-search {
+  color: #d4af37; /* luxury gold accent */
+  transform: scale(1.1); /* subtle zoom */
+}
+
+.nav-icons li a i.fas.fa-heart {
+  color: #333; /* default */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-icons li a:hover i.fas.fa-heart {
+  color: #d4af37; /* luxury gold accent */
+  transform: scale(1.1); /* subtle zoom */
+}
+
+
+/* Footer */
+.footer {
+  background: #fdfaf6;
+  padding: 50px 20px;
+  border-top: 1px solid #e2d1c3;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #bfa14a;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a:hover {
+  color: #bfa14a;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #bfa14a;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #e2d1c3;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #555;
+  font-size: 0.9rem;
+}
+.social-icons a {
+  margin: 0 10px;
+  color: #333; /* or gold if you want luxury styling */
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #d4af37; /* elegant gold hover */
+}
+
+
