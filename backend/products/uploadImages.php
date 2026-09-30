@@ -1,15 +1,17 @@
 <?php
 session_start();
-include 'db.php'; // Include DB connection
+require_once __DIR__ . '/../config/db.php';
 
 // Redirect if not logged in
 if (!isset($_SESSION['userName'])) {
-    header("Location: sellersSignUp.html");
+    header("Location: sellersSignUpPage.php");
     exit();
 }
 
+$message = "";
+
 if (isset($_POST['upload'])) {
-    $target_dir = "uploads/";
+    $target_dir = "../../assets/images/uploads/";
     
     // Create uploads folder if it doesn't exist
     if (!is_dir($target_dir)) {
@@ -22,27 +24,31 @@ if (isset($_POST['upload'])) {
     // Only allow image files
     $allowed = ["jpg", "jpeg", "png", "gif", "webp"];
     if (!in_array($imageFileType, $allowed)) {
-        die("Error: Only image files are allowed.");
-    }
-
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-        // Get seller's ID using their session name
-        $name = $_SESSION['userName'];
-        $stmt = $conn->prepare("SELECT id FROM sellers WHERE firstName = ?");
-        $stmt->bind_param("s", $name);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $seller = $result->fetch_assoc();
-        $seller_id = $seller['id'];
-
-        // Save image path to DB
-        $sql = "INSERT INTO images (user_id, image_path) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("is", $seller_id, $target_file);
-        $stmt->execute();
-        echo "Image uploaded successfully!";
+        $message = "Error: Only image files are allowed.";
     } else {
-        echo "Error uploading image.";
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            // Get seller's ID using their session name
+            $name = $_SESSION['userName'];
+            $stmt = $conn->prepare("SELECT id FROM sellers WHERE firstName = ?");
+            if ($stmt) {
+                $stmt->bind_param("s", $name);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $seller = $result->fetch_assoc();
+                $seller_id = $seller['id'] ?? 0;
+
+                // Save image path to DB
+                $sql = "INSERT INTO images (user_id, image_path) VALUES (?, ?)";
+                $stmt2 = $conn->prepare($sql);
+                if ($stmt2) {
+                    $stmt2->bind_param("is", $seller_id, $target_file);
+                    $stmt2->execute();
+                }
+            }
+            $message = "Image uploaded successfully!";
+        } else {
+            $message = "Error uploading image.";
+        }
     }
 }
 ?>
@@ -52,37 +58,37 @@ if (isset($_POST['upload'])) {
 <head>
     <meta charset="UTF-8">
     <title>Upload Images - All I Luxe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/uploadFurniture.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
 </head>
 <body>
 
-<h1>Welcome, <?php echo htmlspecialchars($_SESSION['userName']); ?>!</h1>
-<h2>Upload Furniture Image</h2>
+<header class="navbar">
+    <a href="../../index.html" class="logo">All I Luxe</a>
+    <nav>
+      <ul>
+        <li><a href="../../aboutUsPage.html">About Us</a></li>
+        <li><a href="../../sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="../../sellersdashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+</header>
 
-<form action="uploadImages.php" method="POST" enctype="multipart/form-data">
-    <input type="file" name="image" accept="image/*" required>
-    <button type="submit" name="upload">Upload</button>
-</form>
+<section class="form-container">
+    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['userName']); ?>!</h1>
+    <p>Upload Furniture Image</p>
 
-<h3>Your Uploaded Images</h3>
-<?php
-// Display this seller's images
-$name = $_SESSION['userName'];
-$stmt = $conn->prepare("SELECT id FROM sellers WHERE firstName = ?");
-$stmt->bind_param("s", $name);
-$stmt->execute();
-$res = $stmt->get_result()->fetch_assoc();
-$seller_id = $res['id'];
+    <?php if ($message): ?>
+        <p style="color: #bfa14a; font-weight: bold;"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
 
-$stmt2 = $conn->prepare("SELECT image_path FROM images WHERE user_id = ?");
-$stmt2->bind_param("i", $seller_id);
-$stmt2->execute();
-$images = $stmt2->get_result();
-
-while ($row = $images->fetch_assoc()) {
-    echo '<img src="' . htmlspecialchars($row['image_path']) . '" width="200"><br>';
-}
-?>
+    <form action="uploadImages.php" method="POST" enctype="multipart/form-data">
+        <div class="input-box">
+            <input type="file" name="image" accept="image/*" required>
+        </div>
+        <button type="submit" name="upload" class="btn">Upload Image</button>
+    </form>
+</section>
 
 </body>
 </html>

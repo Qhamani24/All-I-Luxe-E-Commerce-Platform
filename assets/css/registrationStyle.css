@@ -91,7 +91,7 @@ body {
 /* Left Panel */
 .left-panel {
   flex: 1; /* takes half the width */
-  background: url('images/Image (1).jpg') center/cover no-repeat;
+  background: url('../images/Image (1).jpg') center/cover no-repeat;
   position: relative;
 }
 

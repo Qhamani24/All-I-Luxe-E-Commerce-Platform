@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit();
 }
 
-include 'db.php';
+require_once __DIR__ . '/../config/db.php';
 
 // Fetch stats
 $totalSellers   = $conn->query("SELECT COUNT(*) AS cnt FROM sellers")->fetch_assoc()['cnt'] ?? 0;
@@ -70,7 +70,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All I Luxe | Admin</title>
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>

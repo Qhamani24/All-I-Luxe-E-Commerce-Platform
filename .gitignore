@@ -1,0 +1,34 @@
+# ============================================
+# All I Luxe - Git Ignore Rules
+# ============================================
+
+# Local Database & Environment Overrides
+.env
+backend/config/db.local.php
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor & IDE Directories (keep .vscode/launch.json tracked, ignore temp workspace state)
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Uploaded User/Product Media (preserve directory structure via .gitkeep if needed)
+assets/images/uploads/*
+!assets/images/uploads/.gitkeep
+
+# Temporary & Log Files
+*.log
+scratch/
+tmp/
+temp/

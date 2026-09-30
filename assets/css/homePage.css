@@ -164,15 +164,15 @@
 
 /* Specific Backgrounds */
 .bedroom {
-  background-image: url("images/homepageBedroomDesign.jpg");
+  background-image: url("../images/homepageBedroomDesign.jpg");
 }
 
 .dining {
-  background-image: url("images/homepageDiningRoomDesign.jpg");
+  background-image: url("../images/homepageDiningRoomDesign.jpg");
 }
 
 .lounge {
-  background-image: url("images/homepageLoungeSuite.jpg");
+  background-image: url("../images/homepageLoungeSuite.jpg");
 }
 
 

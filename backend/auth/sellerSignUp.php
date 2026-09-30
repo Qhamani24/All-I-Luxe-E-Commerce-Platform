@@ -1,24 +1,16 @@
 <?php
 session_start();
 
-$servername = "sql300.infinityfree.com";
-$username   = "if0_41972949";
-$password   = "vGYNEN6Kuj";
-$dbname     = "if0_41972949_accounts";
+require_once __DIR__ . '/../config/db.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$fname    = $_POST['firstName'];
-$lname    = $_POST['lastName'];
-$email    = $_POST['email'];
-$age      = $_POST['age'];
-$mobile   = $_POST['mobile'];
-$password = $_POST['password'];
-$confirm  = $_POST['confirmPassword'];
-$userType = $_POST['userType'];
+$fname    = $_POST['firstName'] ?? '';
+$lname    = $_POST['lastName'] ?? '';
+$email    = $_POST['email'] ?? '';
+$age      = $_POST['age'] ?? 0;
+$mobile   = $_POST['mobile'] ?? '';
+$password = $_POST['password'] ?? '';
+$confirm  = $_POST['confirmPassword'] ?? '';
+$userType = $_POST['userType'] ?? 'seller';
 
 if ($password !== $confirm) {
     die("Passwords do not match.");
@@ -34,7 +26,7 @@ $sql = "INSERT INTO sellers (firstName, lastName, email, age, mobile, password, 
 
 if ($conn->query($sql) === TRUE) {
     $_SESSION['userName'] = $fname;
-    header("Location: uploadFurniture.php");
+    header("Location: ../products/uploadFurniture.php");
     exit();
 } else {
     echo "Error: " . $conn->error;

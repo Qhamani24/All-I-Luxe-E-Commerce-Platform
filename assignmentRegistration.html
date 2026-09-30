@@ -6,7 +6,7 @@
   <title>All I Luxe | Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome provided the social media icons -->
-  <link rel="stylesheet" href="RegistrationStyle.css">
+  <link rel="stylesheet" href="assets/css/registrationStyle.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -55,7 +55,7 @@
 
    <!-- Left Panel -->
   <div class="left-panel">
-    <a href="images/Image (1).jpg" target="_blank" class="image-link">
+    <a href="assets/images/Image (1).jpg" target="_blank" class="image-link">
   <div class="overlay">
       <h1>Elegance. Comfort. Timeless Design.</h1>
     </div>
@@ -68,7 +68,7 @@
         <h2>Welcome Back to All I Luxe</h2>
         <p class="subtitle">Access your account to buy, sell, or explore luxury furniture.</p>
         
-        <form class="login-form" action="login.php" method="post"> 
+        <form class="login-form" action="backend/auth/userLogin.php" method="post"> 
           <input type="email" name="email" placeholder="Email address" required>
           <input type="password" name="password" placeholder="Password" required>
 
@@ -81,7 +81,7 @@
 
   <div class="options">
     <label><input type="checkbox" name="remember"> Remember me</label>
-    <a href="forgotPassword.html">Forgot password?</a>
+    <a href="#" onclick="alert('Password reset instructions will be sent to your registered email.'); return false;">Forgot password?</a>
   </div>
 
   <button type="submit" class="btn gold"> <a href="index.html">Log In</a></button>
@@ -108,7 +108,7 @@
       </div>
     </div>
   </div>
-  <script src="registrationScript.js"></script>
+  <script src="assets/js/registration.js"></script>
 
 
  <!-- Footer -->
@@ -130,7 +130,7 @@
         <li><a href="sellToUsPage.html">Sell to Us</a></li>
         <li><a href="browseFurniture.html">Categories</a></li>
         <li><a href="contactUs.html">Contact</a></li>
-        <li><a href="loginRegister.html" id="footer-account">My Account</a></li>
+        <li><a href="assignmentRegistration.html" id="footer-account">My Account</a></li>
       </ul>
     </div>
 

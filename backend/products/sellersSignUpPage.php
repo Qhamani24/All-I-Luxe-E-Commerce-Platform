@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // Include DB connection
+require_once __DIR__ . '/../config/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ include 'db.php'; // Include DB connection
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All I Luxe | Seller Signup</title>
-  <link rel="stylesheet" href="signupPage.css">
+  <link rel="stylesheet" href="../../assets/css/signupPage.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -16,14 +16,14 @@ include 'db.php'; // Include DB connection
 
   <!-- Navigation -->
   <header class="navbar">
-    <a href="index.php" class="logo">All I Luxe</a>
+    <a href="../../index.html" class="logo">All I Luxe</a>
     <nav>
       <ul>
-        <li><a href="aboutUsPage.html">About Us</a></li>
-        <li><a href="sellToUsPage.html">Sell To Us</a></li>
-        <li><a href="contactUs.html">Contact Us</a></li>
-        <li><a href="assignmentRegistration.html">Login</a></li>
-        <li><a href="sellersSignUp.php">Signup</a></li>
+        <li><a href="../../aboutUsPage.html">About Us</a></li>
+        <li><a href="../../sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="../../contactUs.html">Contact Us</a></li>
+        <li><a href="../../assignmentRegistration.html">Login</a></li>
+        <li><a href="sellersSignUpPage.php">Signup</a></li>
       </ul>
     </nav>
 
@@ -36,7 +36,7 @@ include 'db.php'; // Include DB connection
         <?php if(isset($_SESSION['userName'])): ?>
           <a href="#"><i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['userName']); ?></a>
         <?php else: ?>
-          <a href="assignmentRegistration.html"><i class="fas fa-user"></i></a>
+          <a href="../../assignmentRegistration.html"><i class="fas fa-user"></i></a>
         <?php endif; ?>
       </li>
     </ul>
@@ -45,7 +45,7 @@ include 'db.php'; // Include DB connection
   <!-- Registration Form -->
   <section class="form-container">
     <h1>Start Selling Furniture</h1>
-    <form id="sellerSignupForm" action="signupSeller.php" method="post">
+    <form id="sellerSignupForm" action="../auth/sellerSignUp.php" method="post">
       
       <div class="input-box">
         <span class="icon"><i class="fas fa-user"></i></span>
@@ -87,7 +87,7 @@ include 'db.php'; // Include DB connection
       </div>
 
       <button type="submit" class="btn">Sign Up</button>
-      <p>Already have an account? <a href="assignmentRegistration.html">Login</a></p>
+      <p>Already have an account? <a href="../../assignmentRegistration.html">Login</a></p>
     </form>
   </section>
 

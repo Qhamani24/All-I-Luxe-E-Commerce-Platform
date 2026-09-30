@@ -3,9 +3,9 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
    
-    $fname = $_POST['username'];
-    $email = $_POST['email'];
-    $fpassword = $_POST['fpassword'];
+    $fname = $_POST['username'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $fpassword = $_POST['password'] ?? $_POST['fpassword'] ?? '';
  
     echo "<table>
     <tr>
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     echo "<h2>Error: No data received.</h2>";
  
-    echo '<a href="inf.html">Return to Form</a>';
+    echo '<a href="week6Form.html">Return to Form</a>';
 }
 
   // Database connection parameters
@@ -46,9 +46,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$fname = $_POST['username'];
-$email = $_POST['email'];
-$fpassword = $_POST['fpassword'];
+$fname = $_POST['username'] ?? '';
+$email = $_POST['email'] ?? '';
+$fpassword = $_POST['password'] ?? $_POST['fpassword'] ?? '';
 $sql = "INSERT INTO users (name, email, password) VALUES ('$fname', '$email', '$fpassword')";
 
 // Execute the query and check for successful insertion

@@ -1,26 +1,17 @@
 <?php
 session_start();
 
-// InfinityFree DB connection (replace with your actual details)
-$servername = "sql300.infinityfree.com";
-$username   = "if0_41972949";   // e.g. if0_41972949
-$password   = "vGYNEN6Kuj";   // from InfinityFree panel
-$dbname     = "if0_41972949_accounts";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once __DIR__ . '/../config/db.php';
 
 // Collect form data
-$fname    = $_POST['firstName'];
-$lname    = $_POST['lastName'];
-$email    = $_POST['email'];
-$age      = $_POST['age'];
-$mobile   = $_POST['mobile'];
-$password = $_POST['password'];
-$confirm  = $_POST['confirmPassword'];
-$userType = $_POST['userType']; 
+$fname    = $_POST['firstName'] ?? '';
+$lname    = $_POST['lastName'] ?? '';
+$email    = $_POST['email'] ?? '';
+$age      = $_POST['age'] ?? 0;
+$mobile   = $_POST['mobile'] ?? '';
+$password = $_POST['password'] ?? '';
+$confirm  = $_POST['confirmPassword'] ?? '';
+$userType = $_POST['userType'] ?? 'user'; 
 
 // Validate
 if ($password !== $confirm) {
@@ -38,18 +29,9 @@ $sql = "INSERT INTO users (firstName, lastName, email, age, mobile, password, us
         VALUES ('$fname', '$lname', '$email', '$age', '$mobile', '$hashedPassword', '$userType')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Signup successful! <a href='assignmentRegistration.html'>Login here</a>";
-} else {
-    echo "Error: " . $conn->error;
-}
-
-// Optionally, you can log the user in immediately after signup
-if ($conn->query($sql) === TRUE) {
-    // Store the first name in session
     $_SESSION['userName'] = $fname;
-
-    // Redirect to homepage
-    header("Location: index.html"); 
+    $_SESSION['role']     = $userType;
+    header("Location: ../../index.html"); 
     exit();
 } else {
     echo "Error: " . $conn->error;

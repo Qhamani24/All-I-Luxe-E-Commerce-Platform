@@ -271,10 +271,9 @@ input {
 .cards-accepted img {
   height: 30px;
 }
-.cards-accepted img.visa { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\visa.png') no-repeat center; }
-.cards-accepted img.mastercard { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\mastercard.png') no-repeat center; }
-.cards-accepted img.amex { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\amex.png') no-repeat center; }
-.cards-accepted img.discover { background: url('C:\Users\Qhamani\OneDrive - Eduvos\index.html\.vscode\images\discover.png') no-repeat center; }
+.cards-accepted img.visa { background: url('../images/visa.png') no-repeat center; }
+.cards-accepted img.mastercard { background: url('../images/mastercard.png') no-repeat center; }
+.cards-accepted img.amex { background: url('../images/amex.png') no-repeat center; }
 
 /* Expiry input */
 #expiry {

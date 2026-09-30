@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <title>Admin Login – All I Luxe</title>
-  <link rel="stylesheet" href="adminLogin.css">
+  <link rel="stylesheet" href="../../assets/css/adminLogin.css">
 </head>
 <body>
   <div class="login-wrap">

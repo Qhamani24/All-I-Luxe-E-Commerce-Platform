@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['userName'])) {
-    header("Location: sellersSignUp.html");
+    header("Location: sellersSignUpPage.php");
     exit();
 }
 ?>
@@ -11,7 +11,7 @@ if (!isset($_SESSION['userName'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All I Luxe | Upload Furniture</title>
-  <link rel="stylesheet" href="uploadFurniture.css">
+  <link rel="stylesheet" href="../../assets/css/uploadFurniture.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -19,14 +19,13 @@ if (!isset($_SESSION['userName'])) {
 
   <!-- Navigation -->
   <header class="navbar">
-    <a href="index.html" class="logo">All I Luxe</a>
+    <a href="../../index.html" class="logo">All I Luxe</a>
     <nav>
       <ul>
-        <li><a href="aboutUsPage.html">About Us</a></li>
-        <li><a href="sellToUsPage.html">Sell To Us</a></li>
-        <li><a href="contactUs.html">Contact Us</a></li>
-        <li><a href="assignmentRegistration.html">Login</a></li>
-        <!-- Show logged-in user's name -->
+        <li><a href="../../aboutUsPage.html">About Us</a></li>
+        <li><a href="../../sellToUsPage.html">Sell To Us</a></li>
+        <li><a href="../../contactUs.html">Contact Us</a></li>
+        <li><a href="../../assignmentRegistration.html">Login</a></li>
         <li>Welcome, <?php echo htmlspecialchars($_SESSION['userName']); ?>!</li>
       </ul>
     </nav>
@@ -44,13 +43,12 @@ if (!isset($_SESSION['userName'])) {
     <h1>Upload Your Furniture</h1>
     <p>Please provide clear photos and details of your luxury furniture.</p>
 
-    <!-- ↓ action now points to PHP handler -->
-    <form id="uploadForm" action="saveFurniture.php" method="POST" enctype="multipart/form-data">
+    <form id="uploadForm" action="uploadImages.php" method="POST" enctype="multipart/form-data">
 
       <!-- Photos -->
       <div class="input-box">
         <label for="photos">Upload Photos</label>
-        <input type="file" id="photos" name="photos[]" multiple required>
+        <input type="file" id="photos" name="image" required>
       </div>
 
       <!-- Item Name -->
@@ -100,7 +98,7 @@ if (!isset($_SESSION['userName'])) {
         <input type="number" id="price" name="price" placeholder="e.g. 5000" required>
       </div>
 
-      <button type="submit" class="btn">Submit for Evaluation</button>
+      <button type="submit" name="upload" class="btn">Submit for Evaluation</button>
     </form>
   </section>
 

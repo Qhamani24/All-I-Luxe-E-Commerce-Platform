@@ -12,7 +12,7 @@ function initAuth() {
     const user = getCurrentUser();
     
     if (isLoginPage && user) {
-        window.location.href = 'dashboard.html';
+        window.location.href = 'sellersdashboard.html';
         return;
     }
     
@@ -44,7 +44,7 @@ function handleLogin(e) {
     };
     
     localStorage.setItem(AUTH_KEY, JSON.stringify(user));
-    window.location.href = 'dashboard.html';
+    window.location.href = 'sellersdashboard.html';
 }
 
 function getCurrentUser() {
